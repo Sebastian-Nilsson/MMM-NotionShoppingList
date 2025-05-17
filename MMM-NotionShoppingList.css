@@ -1,0 +1,53 @@
+/* Basic table styles */
+table {
+  width: 100%; /* Ensure it takes the full width */
+  border-collapse: collapse; /* Remove extra space between borders */
+}
+
+th,
+td {
+  padding: 8px 16px; /* Add padding for spacing */
+  text-align: left; /* Align text to the left */
+
+}
+
+th {
+  background-color: #f4f4f4; /* Light background for the header */
+  position: sticky; /* Fix header when scrolling */
+  top: 0; /* Keep header at top */
+    transition:"0.3s all ease-in-out"
+}
+
+/* Container styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden; /* Ensures elements don't overflow while sliding */
+  height: 300px; /* Adjust based on your content */
+}
+
+/* Basic styles for the items */
+.item {
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Slide-in animation */
+.item.entering {
+  opacity: 1;
+  transform: translateY(0);
+  border: 1px solid #ddd; /* Add border for visibility */
+}
+
+/* Slide-out animation */
+.item.leaving {
+  opacity: 0;
+  transform: translateY(10px);
+  border: 0px; /* Add border for visibility */
+}
